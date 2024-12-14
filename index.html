@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    :root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --accent-color: #4a90e2;
+    --secondary-color: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar h1 {
+    color: var(--accent-color);
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li {
+    margin-left: 1rem;
+}
+
+#navbar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    color: var(--accent-color);
+}
+
+main {
+    padding-top: 80px;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3a7bc8;
+}
+
+.marquee {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.5rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+footer {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar ul {
+        margin-top: 1rem;
+    }
+
+    #navbar ul li {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1><center>Prasanth K</center></h1>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <img src="guy.jpeg" alt="John Doe" class="profile-img">
+                <h2>About Me</h2>
+                <p>Hi, I'm Prasanth K, a Passionate web Full Stack Developer with a keen interest in creating Responsive and functional websites.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Languages Known</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Websites Hosted & Created</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Watch Website</h3>
+                        <p>A responsive e-commerce website</p>
+                        <a href="https://cartarwatches.vercel.app/" class="btn">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Weather App</h3>
+                        <p>A great Weather App</p>
+                        <a href="https://weather-app-one-liart-76.vercel.app/" class="btn">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Hostel Management System</h3>
+                        <p>A portfolio website template</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <div class="container">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>Photography</li>
+                    <li>Hiking</li>
+                    <li>Reading</li>
+                    <li>Cooking</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="marquee">
+            <p>Welcome to my portfolio! Check out my latest projects and skills.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 John Doe. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
